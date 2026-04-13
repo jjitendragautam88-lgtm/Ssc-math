@@ -1,0 +1,984 @@
+<!<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC Percentage — Zero to Advanced</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Hind:wght@400;500;600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#080d1a;color:#e2e8f0;font-family:'Hind',sans-serif;min-height:100vh}
+
+/* HEADER */
+.hdr{background:linear-gradient(135deg,#0f172a,#1e1b4b);border-bottom:2px solid #f59e0b;padding:14px 18px;position:sticky;top:0;z-index:99}
+.hdr h1{font-family:'Baloo 2',cursive;font-size:1.2rem;color:#f59e0b}
+.hdr p{font-size:0.7rem;color:#94a3b8;margin-top:2px}
+
+/* NAV TABS */
+.nav-wrap{overflow-x:auto;background:#0c1220;border-bottom:1px solid #1e293b;white-space:nowrap;padding:8px 10px;scrollbar-width:none}
+.nav-wrap::-webkit-scrollbar{display:none}
+.nav-btn{display:inline-block;padding:6px 14px;border-radius:20px;border:1px solid #1e293b;background:none;color:#94a3b8;font-size:0.72rem;font-family:'Hind',sans-serif;cursor:pointer;margin-right:6px;transition:all 0.2s;white-space:nowrap}
+.nav-btn:hover{border-color:#f59e0b;color:#f59e0b}
+.nav-btn.active{background:#f59e0b;color:#080d1a;border-color:#f59e0b;font-weight:700}
+.nav-btn.test-btn{border-color:#6366f1;color:#a5b4fc}
+.nav-btn.test-btn.active{background:#6366f1;color:#fff}
+.nav-btn.rev-btn{border-color:#22c55e;color:#4ade80}
+.nav-btn.rev-btn.active{background:#22c55e;color:#080d1a}
+
+/* MAIN */
+.main{max-width:860px;margin:0 auto;padding:16px 14px}
+
+/* TOPIC CARD */
+.card{background:#0f172a;border:1px solid #1e293b;border-radius:14px;padding:20px;margin-bottom:20px}
+.card-hdr{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid #1e293b}
+.card-icon{font-size:1.8rem;background:#1e293b;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:10px;flex-shrink:0}
+.card-title{font-family:'Baloo 2',cursive;font-size:1.15rem;color:#f8fafc}
+.card-sub{font-size:0.72rem;color:#64748b;margin-top:2px}
+
+/* TAGS */
+.tag{display:inline-block;font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:20px;margin:0 4px 8px 0}
+.t-cgl{background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44}
+.t-ntpc{background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44}
+.t-cbt{background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44}
+
+/* SECTION LABELS */
+.slabel{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:16px 0 8px;display:flex;align-items:center;gap:6px}
+.sl-blue{color:#60a5fa}.sl-purple{color:#a78bfa}.sl-green{color:#34d399}.sl-red{color:#f87171}.sl-orange{color:#fb923c}.sl-sky{color:#38bdf8}
+
+/* BOXES */
+.box-meaning{background:#0d1929;border-left:3px solid #60a5fa;border-radius:0 8px 8px 0;padding:12px 14px;font-size:0.86rem;line-height:1.8;color:#cbd5e1}
+.box-formula{background:#130d29;border:1px solid #a78bfa44;border-radius:10px;padding:14px}
+.frow{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;font-size:0.85rem}
+.frow:last-child{margin-bottom:0}
+.fkey{color:#a78bfa;font-weight:600;min-width:120px;font-size:0.78rem}
+.fval{color:#e2e8f0;font-family:'Baloo 2',cursive;background:#1e1a3a;padding:2px 10px;border-radius:6px;font-size:0.88rem}
+.box-trick{background:#0d2918;border:1px solid #34d39944;border-radius:10px;padding:14px}
+.trick-item{display:flex;gap:8px;margin-bottom:8px;font-size:0.85rem;color:#a7f3d0;line-height:1.6}
+.trick-item:last-child{margin-bottom:0}
+.tbullet{color:#34d399;flex-shrink:0;margin-top:2px}
+.box-mistake{background:#1f0d0d;border:1px solid #f8717144;border-radius:10px;padding:12px 14px;font-size:0.85rem;color:#fca5a5;display:flex;gap:8px;line-height:1.6}
+.box-example{background:#1a1208;border:1px solid #fb923c44;border-radius:10px;padding:14px}
+.eq{font-size:0.87rem;color:#fdba74;font-weight:600;margin-bottom:10px;line-height:1.6}
+.esteps{font-size:0.83rem;color:#cbd5e1;line-height:1.9}
+.snum{color:#fb923c;font-weight:600}
+.ans-box{background:#fb923c22;border:1px solid #fb923c55;border-radius:6px;padding:6px 12px;margin-top:10px;font-size:0.87rem;color:#fb923c;font-weight:600;display:inline-block}
+.highlight-note{background:#1a1208;border:1px solid #f59e0b33;border-radius:8px;padding:10px 12px;font-size:0.82rem;color:#fde68a;margin-top:10px;display:flex;gap:6px}
+
+/* PRACTICE */
+.pq{background:#0d1929;border:1px solid #1e3a5f;border-radius:10px;padding:12px 14px;margin-bottom:10px;transition:border-color 0.2s}
+.pq:hover{border-color:#38bdf8}
+.pnum{font-size:0.68rem;color:#38bdf8;font-weight:700;letter-spacing:1px;margin-bottom:4px}
+.ptext{font-size:0.85rem;color:#bfdbfe;line-height:1.6;margin-bottom:8px}
+.toggle-btn{background:none;border:1px solid #38bdf855;border-radius:6px;color:#38bdf8;font-size:0.72rem;padding:4px 10px;cursor:pointer;font-family:'Hind',sans-serif;transition:all 0.2s}
+.toggle-btn:hover{background:#38bdf822}
+.answer-box{margin-top:10px;background:#0a2010;border-radius:8px;padding:10px 12px;font-size:0.82rem;color:#86efac;line-height:1.7;border-left:3px solid #34d399;display:none}
+.answer-box.show{display:block}
+
+/* MINI TEST */
+.mini-test{background:linear-gradient(135deg,#0f172a,#1e1b4b);border:2px solid #6366f1;border-radius:14px;padding:20px;margin-bottom:20px}
+.mt-title{font-family:'Baloo 2',cursive;font-size:1.1rem;color:#a5b4fc;margin-bottom:4px}
+.mt-sub{font-size:0.72rem;color:#64748b;margin-bottom:14px}
+
+/* REVISION */
+.rev-section{background:linear-gradient(135deg,#0d1f0d,#0f172a);border:2px solid #22c55e;border-radius:14px;padding:20px;margin-bottom:20px}
+.rev-title{font-family:'Baloo 2',cursive;font-size:1.15rem;color:#4ade80;margin-bottom:14px}
+.ftable{width:100%;border-collapse:collapse;font-size:0.82rem;margin-top:6px}
+.ftable th{background:#1e293b;color:#f59e0b;padding:8px 10px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:1px}
+.ftable td{padding:8px 10px;border-bottom:1px solid #1e293b;color:#cbd5e1;line-height:1.5}
+.ftable tr:nth-child(even) td{background:#0f172a}
+
+/* SPEED TEST */
+.speed-test{background:#0f172a;border:2px solid #f59e0b;border-radius:14px;padding:20px;margin-bottom:20px}
+.st-title{font-family:'Baloo 2',cursive;font-size:1.15rem;color:#f59e0b;margin-bottom:14px}
+.timer-box{display:flex;align-items:center;justify-content:space-between;background:#1a1208;border-radius:10px;padding:12px 16px;margin-bottom:16px}
+.timer-label{font-size:0.7rem;color:#f59e0b;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.timer-val{font-family:'Baloo 2',cursive;font-size:1.6rem;font-weight:800;color:#fbbf24;margin-top:2px}
+.start-btn{background:linear-gradient(135deg,#f59e0b,#d97706);color:#080d1a;border:none;border-radius:8px;padding:8px 20px;font-size:0.83rem;font-weight:700;cursor:pointer;font-family:'Hind',sans-serif}
+.score-box{margin-top:18px;background:#0a2010;border-radius:12px;padding:14px;border:1px solid #22c55e44}
+.score-title{color:#4ade80;font-weight:700;font-size:0.83rem;margin-bottom:8px}
+.score-row{font-size:0.8rem;color:#86efac;line-height:2.2}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,#1e293b,transparent);margin:16px 0}
+.section{margin-bottom:16px}
+.hidden{display:none}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.frac-mini{background:#130d29;border-radius:8px;padding:10px 12px}
+.frac-mini div{font-size:0.82rem;color:#c4b5fd;font-family:'Baloo 2',cursive;margin-bottom:4px}
+@media(max-width:600px){.grid2{grid-template-columns:1fr}.fkey{min-width:90px}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>📊 SSC Percentage — Zero to Advanced</h1>
+  <p>CGL Mains • RRB NTPC • CBT-2 | 13 Types + Mini Tests + Speed Test</p>
+</div>
+
+<div class="nav-wrap">
+  <button class="nav-btn active" onclick="show('basics',this)">📊 Basics</button>
+  <button class="nav-btn" onclick="show('fractions',this)">🔄 Fractions</button>
+  <button class="nav-btn" onclick="show('t1',this)">📈 Type 1</button>
+  <button class="nav-btn" onclick="show('t2',this)">🔗 Type 2</button>
+  <button class="nav-btn" onclick="show('t3',this)">⚡ Type 3</button>
+  <button class="nav-btn test-btn" onclick="show('mini1',this)">🧪 Mini Test 1</button>
+  <button class="nav-btn" onclick="show('t4',this)">↔️ Type 4</button>
+  <button class="nav-btn" onclick="show('t5',this)">👥 Type 5</button>
+  <button class="nav-btn" onclick="show('t6',this)">⚖️ Type 6</button>
+  <button class="nav-btn" onclick="show('t7',this)">🗳️ Type 7</button>
+  <button class="nav-btn test-btn" onclick="show('mini2',this)">🧪 Mini Test 2</button>
+  <button class="nav-btn" onclick="show('t8',this)">💰 Type 8</button>
+  <button class="nav-btn" onclick="show('t9',this)">📂 Type 9</button>
+  <button class="nav-btn" onclick="show('t10',this)">🎓 Type 10</button>
+  <button class="nav-btn" onclick="show('t11',this)">🤝 Type 11</button>
+  <button class="nav-btn" onclick="show('t12',this)">🔵 Type 12</button>
+  <button class="nav-btn" onclick="show('t13',this)">🔢 Type 13</button>
+  <button class="nav-btn test-btn" onclick="show('mini3',this)">🧪 Mini Test 3</button>
+  <button class="nav-btn rev-btn" onclick="show('revision',this)">📋 Revision</button>
+  <button class="nav-btn rev-btn" onclick="show('speedtest',this)">⏱️ Speed Test</button>
+</div>
+
+<div class="main">
+
+<!-- ══════════════════ BASICS ══════════════════ -->
+<div id="basics" class="section">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">📊</div>
+    <div><div class="card-title">Basics of Percentage</div><div class="card-sub">Foundation — Yahan se shuru karo</div></div>
+  </div>
+  <span class="tag t-cgl">CGL</span><span class="tag t-ntpc">NTPC</span><span class="tag t-cbt">CBT-2</span>
+  <div class="divider"></div>
+
+  <div class="slabel sl-blue">💡 BASIC MEANING</div>
+  <div class="box-meaning">
+    <b>Percent</b> ka matlab hai — <b>"per 100"</b> yaani "100 mein se kitna".<br><br>
+    Agar class mein 100 bacche hain aur 40 pass hue → pass% = <b>40%</b><br>
+    Agar 60 bacche hain aur 24 pass hue → 24/60 × 100 = <b>40%</b><br><br>
+    <b>Simple formula:</b> Percentage = (Part ÷ Whole) × 100
+  </div>
+
+  <div class="slabel sl-purple">📐 FORMULAS</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">x% of y =</span><span class="fval">x × y / 100</span></div>
+    <div class="frow"><span class="fkey">Part → % =</span><span class="fval">(Part ÷ Whole) × 100</span></div>
+    <div class="frow"><span class="fkey">% → Value =</span><span class="fval">% × Total / 100</span></div>
+    <div class="frow"><span class="fkey">A% of B =</span><span class="fval">B% of A ✓ (swap trick!)</span></div>
+  </div>
+
+  <div class="slabel sl-green">⚡ SHORT TRICKS</div>
+  <div class="box-trick">
+    <div class="trick-item"><span class="tbullet">✦</span>15% of 60 = 60% of 15 = 9 (swap trick — jo easy lage woh karo!)</div>
+    <div class="trick-item"><span class="tbullet">✦</span>x% increase → number × (100+x)/100</div>
+    <div class="trick-item"><span class="tbullet">✦</span>x% decrease → number × (100−x)/100</div>
+    <div class="trick-item"><span class="tbullet">✦</span>10% of any number = wo number ÷ 10 (aur 5% = uska aadha)</div>
+    <div class="trick-item"><span class="tbullet">✦</span>1% = number ÷ 100, baaki sab isse nikaalte hain</div>
+  </div>
+
+  <div class="slabel sl-red">⚠️ COMMON MISTAKE</div>
+  <div class="box-mistake">⚠️ "A is 20% more than B" aur "B is 20% less than A" — ye DONO SAME NAHI hain! Base change hoti hai — bahut log ye galti karte hain!</div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: Ek class mein 80 students hain. 60% pass hue. Kitne fail hue?</div>
+    <div class="esteps">
+      <span class="snum">Step 1:</span> Pass = 60% of 80 = 60×80/100 = 48<br>
+      <span class="snum">Step 2:</span> Fail = 80 − 48 = 32
+    </div>
+    <div class="ans-box">✅ Answer: 32 students fail hue</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">350 ka 14% kitna hoga?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 14×350/100 = <b>49</b></div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">Box mein 200 toffees hain. Ramesh ne 35% kha liye. Kitni bachin?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 35% of 200 = 70. Baaki = 200−70 = <b>130</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">56 is what percent of 280?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ (56/280) × 100 = <b>20%</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ FRACTIONS ══════════════════ -->
+<div id="fractions" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">🔄</div>
+    <div><div class="card-title">Fraction ↔ Percentage Conversion</div><div class="card-sub">Sabse zaroori table — ratta maar lo!</div></div>
+  </div>
+
+  <div class="slabel sl-blue">💡 MEANING</div>
+  <div class="box-meaning">SSC mein 30–40% questions mein agar ye table yaad ho toh calculation ki zaroorat hi nahi. Direct mentally solve! <b>Ye SSC ka secret weapon hai!</b></div>
+
+  <div class="slabel sl-purple">📐 CONVERSION</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">Fraction → %</span><span class="fval">(num ÷ denom) × 100</span></div>
+    <div class="frow"><span class="fkey">% → Fraction</span><span class="fval">value/100, simplify karo</span></div>
+    <div class="frow"><span class="fkey">Decimal → %</span><span class="fval">decimal × 100</span></div>
+  </div>
+
+  <div class="slabel sl-green">⚡ MAGIC TABLE — YAAD KARO</div>
+  <div class="box-trick" style="padding:10px">
+    <table style="width:100%;font-size:0.82rem;border-collapse:collapse">
+      <tr style="background:#1e293b"><th style="padding:7px;color:#a78bfa">Fraction</th><th style="padding:7px;color:#f59e0b">Percentage</th><th style="padding:7px;color:#60a5fa">Decimal</th></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">1/2</td><td style="text-align:center;color:#f59e0b;font-weight:600">50%</td><td style="text-align:center;color:#60a5fa">0.5</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">1/3</td><td style="text-align:center;color:#f59e0b;font-weight:600">33.33%</td><td style="text-align:center;color:#60a5fa">0.333</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">2/3</td><td style="text-align:center;color:#f59e0b;font-weight:600">66.67%</td><td style="text-align:center;color:#60a5fa">0.667</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">1/4</td><td style="text-align:center;color:#f59e0b;font-weight:600">25%</td><td style="text-align:center;color:#60a5fa">0.25</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">3/4</td><td style="text-align:center;color:#f59e0b;font-weight:600">75%</td><td style="text-align:center;color:#60a5fa">0.75</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">1/5</td><td style="text-align:center;color:#f59e0b;font-weight:600">20%</td><td style="text-align:center;color:#60a5fa">0.2</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">2/5</td><td style="text-align:center;color:#f59e0b;font-weight:600">40%</td><td style="text-align:center;color:#60a5fa">0.4</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">3/5</td><td style="text-align:center;color:#f59e0b;font-weight:600">60%</td><td style="text-align:center;color:#60a5fa">0.6</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">1/6</td><td style="text-align:center;color:#f59e0b;font-weight:600">16.67%</td><td style="text-align:center;color:#60a5fa">0.167</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">1/7</td><td style="text-align:center;color:#f59e0b;font-weight:600">14.28%</td><td style="text-align:center;color:#60a5fa">0.143</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">1/8</td><td style="text-align:center;color:#f59e0b;font-weight:600">12.5%</td><td style="text-align:center;color:#60a5fa">0.125</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">3/8</td><td style="text-align:center;color:#f59e0b;font-weight:600">37.5%</td><td style="text-align:center;color:#60a5fa">0.375</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">5/8</td><td style="text-align:center;color:#f59e0b;font-weight:600">62.5%</td><td style="text-align:center;color:#60a5fa">0.625</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">7/8</td><td style="text-align:center;color:#f59e0b;font-weight:600">87.5%</td><td style="text-align:center;color:#60a5fa">0.875</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">1/9</td><td style="text-align:center;color:#f59e0b;font-weight:600">11.11%</td><td style="text-align:center;color:#60a5fa">0.111</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1e293b22">1/10</td><td style="text-align:center;color:#f59e0b;font-weight:600">10%</td><td style="text-align:center;color:#60a5fa">0.1</td></tr>
+      <tr><td style="padding:6px 8px;text-align:center">1/11</td><td style="text-align:center;color:#f59e0b;font-weight:600">9.09%</td><td style="text-align:center;color:#60a5fa">0.091</td></tr>
+    </table>
+  </div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: Ek dukan mein 240 items. 5/8 items bik gaye. Kitne bache?</div>
+    <div class="esteps">
+      <span class="snum">Step 1:</span> 5/8 = 62.5% (table se pata hai)<br>
+      <span class="snum">Step 2:</span> Biki items = 62.5% of 240 = 150<br>
+      <span class="snum">Step 3:</span> Bache = 240 − 150 = 90
+    </div>
+    <div class="ans-box">✅ Answer: 90 items bache</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">37.5% of 480 = ? (Table use karo)</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 37.5% = 3/8. So 3/8 × 480 = <b>180</b></div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">175 is what fraction of 700?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 175/700 = 1/4 = <b>25%</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">12.5% of 640 = ?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 12.5% = 1/8. So 640/8 = <b>80</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ TYPE 1 ══════════════════ -->
+<div id="t1" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">📈</div>
+    <div><div class="card-title">Type 1: Successive % Change</div><div class="card-sub">Net change formula — CGL mein har saal aata hai!</div></div>
+  </div>
+  <span class="tag t-cgl">CGL Mains</span><span class="tag t-cbt">CBT-2</span>
+
+  <div class="slabel sl-blue">💡 MEANING</div>
+  <div class="box-meaning">Jab kisi number par <b>pehle a%</b> change ho, phir <b>b%</b> change ho — dono baar ka base ALAG hota hai. Isliye simple add/subtract nahi kar sakte!<br><br>Example: Price 20% badhi, phir 10% giri. Net = 20−10+(20×−10)/100 = 10−2 = <b>8%</b></div>
+
+  <div class="slabel sl-purple">📐 FORMULA</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">Net % Change =</span><span class="fval">a + b + (a×b)/100</span></div>
+    <div class="frow"><span class="fkey">Increase ho toh:</span><span class="fval">a, b = positive (+)</span></div>
+    <div class="frow"><span class="fkey">Decrease ho toh:</span><span class="fval">a, b = negative (−)</span></div>
+    <div class="frow"><span class="fkey">Mixed ho toh:</span><span class="fval">e.g. a=+20, b=−10</span></div>
+  </div>
+  <div class="highlight-note">💡 Net % = a + b + ab/100 — ye formula ratta maar lo! CGL mein har saal aata hai.</div>
+
+  <div class="slabel sl-green">⚡ SHORT TRICKS</div>
+  <div class="box-trick">
+    <div class="trick-item"><span class="tbullet">✦</span>Same % increase then decrease: Net = −(a²/100)% ALWAYS</div>
+    <div class="trick-item"><span class="tbullet">✦</span>Example: 20% up then 20% down = −(400/100) = <b>−4%</b> (NOT zero!)</div>
+    <div class="trick-item"><span class="tbullet">✦</span>ab/100 — dono same sign: positive; different sign: negative</div>
+    <div class="trick-item"><span class="tbullet">✦</span>10% up then 10% down = −(100/100) = −1%</div>
+  </div>
+
+  <div class="slabel sl-red">⚠️ COMMON MISTAKE</div>
+  <div class="box-mistake">⚠️ Log sochte hain 20% up + 20% down = 0%. GALAT! Net = 20+(−20)+(20×−20)/100 = 0−4 = <b>−4%</b>. Isliye formula ZAROORI hai!</div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: Phone ki price pehle 10% badhi, phir 20% badhi. Net % change?</div>
+    <div class="esteps">
+      <span class="snum">a = +10, b = +20</span><br>
+      <span class="snum">Formula:</span> a + b + ab/100 = 10 + 20 + (10×20)/100<br>
+      <span class="snum">Calculate:</span> 30 + 200/100 = 30 + 2 = <b>32%</b>
+    </div>
+    <div class="ans-box">✅ Net increase = 32%</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">Vastu ki price 15% badhi, phir 15% giri. Net % change?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ a=+15, b=−15. Net = 15−15+(15×−15)/100 = 0−225/100 = <b>−2.25%</b> decrease</div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">Population pehle 20% badhi, phir 25% badhi. Overall % change?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ a=+20, b=+25. Net = 20+25+(20×25)/100 = 45+5 = <b>50% increase</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">Price 30% increase hua, phir kitna % decrease kare ki original price mile?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Multiplier method: 1.3 × x = 1 → x = 1/1.3. Decrease = (1−1/1.3)/1 × 100 = 30/130×100 = <b>23.07%</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ TYPE 2 ══════════════════ -->
+<div id="t2" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">🔗</div>
+    <div><div class="card-title">Type 2: Series Concept (Multiplier Method)</div><div class="card-sub">Chain se percentage changes — fastest method!</div></div>
+  </div>
+
+  <div class="slabel sl-blue">💡 MEANING</div>
+  <div class="box-meaning">Jab multiple % changes ek ke baad ek lagate hain, har baar nayi value base banti hai. Iska best tarika hai <b>Multiplier Method</b>.<br><br>
+  <b>x% increase</b> → Multiply by (100+x)/100<br>
+  <b>x% decrease</b> → Multiply by (100−x)/100</div>
+
+  <div class="slabel sl-purple">📐 FORMULA</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">Final Value =</span><span class="fval">Initial × M1 × M2 × M3...</span></div>
+    <div class="frow"><span class="fkey">+20% multiplier =</span><span class="fval">× 1.2</span></div>
+    <div class="frow"><span class="fkey">−15% multiplier =</span><span class="fval">× 0.85</span></div>
+    <div class="frow"><span class="fkey">+10%, −20% =</span><span class="fval">× 1.1 × 0.8 = × 0.88 = 12% decrease</span></div>
+  </div>
+
+  <div class="slabel sl-green">⚡ MULTIPLIER QUICK LIST</div>
+  <div class="box-trick">
+    <div class="trick-item"><span class="tbullet">✦</span>+10%→1.1 | +20%→1.2 | +25%→1.25 | +50%→1.5 | +100%→2</div>
+    <div class="trick-item"><span class="tbullet">✦</span>−10%→0.9 | −20%→0.8 | −25%→0.75 | −50%→0.5</div>
+    <div class="trick-item"><span class="tbullet">✦</span>Final multiplier &lt; 1 → overall decrease; &gt; 1 → overall increase</div>
+  </div>
+
+  <div class="slabel sl-red">⚠️ COMMON MISTAKE</div>
+  <div class="box-mistake">⚠️ 10% + 20% = 30% NAHI! Multipliers multiply hote hain: 1.1 × 1.2 = 1.32 → <b>32% increase</b> (30% nahi!)</div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: Rs. 5000 ki salary: pehle 20% increase, phir 10% decrease. Final salary?</div>
+    <div class="esteps">
+      <span class="snum">Multipliers:</span> 1.2 × 0.9 = 1.08<br>
+      <span class="snum">Final:</span> 5000 × 1.08 = <b>Rs. 5400</b>
+    </div>
+    <div class="ans-box">✅ Net 8% increase → Rs. 5400</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">Rs. 8000 pe 25% increase, phir 20% decrease. Final value?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 8000 × 1.25 × 0.8 = 8000 × 1.0 = <b>Rs. 8000</b> (Net 0% change!)</div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">Population 10% badhti hai 3 saal tak. Initial 1000. Final?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 1000 × 1.1³ = 1000 × 1.331 = <b>1331</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">Price mein 3 baar 20% decrease. Initial Rs. 10000. Final?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 10000 × 0.8³ = 10000 × 0.512 = <b>Rs. 5120</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ TYPE 3 ══════════════════ -->
+<div id="t3" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">⚡</div>
+    <div><div class="card-title">Type 3: 3+ Successive Changes Shortcut</div><div class="card-sub">Teen ya zyada changes — chain multiplier method</div></div>
+  </div>
+
+  <div class="slabel sl-blue">💡 MEANING</div>
+  <div class="box-meaning">Teen ya zyada successive % changes ke liye: <b>pehle do ko Type 1 formula se combine karo</b>, phir result ko teesre ke saath. Ya directly multiplier chain use karo.</div>
+
+  <div class="slabel sl-purple">📐 FORMULA</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">Step 1:</span><span class="fval">x = a + b + ab/100</span></div>
+    <div class="frow"><span class="fkey">Step 2:</span><span class="fval">Net = x + c + xc/100</span></div>
+    <div class="frow"><span class="fkey">OR Direct:</span><span class="fval">(1+a/100)(1+b/100)(1+c/100)</span></div>
+  </div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: 10%, 20%, 25% successive increase. Net % change?</div>
+    <div class="esteps">
+      <span class="snum">Multiplier:</span> 1.1 × 1.2 × 1.25<br>
+      <span class="snum">Step 1:</span> 1.1 × 1.2 = 1.32<br>
+      <span class="snum">Step 2:</span> 1.32 × 1.25 = 1.65
+    </div>
+    <div class="ans-box">✅ Net = 65% increase</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">Successive: +20%, −20%, +20%. Net change?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 1.2 × 0.8 × 1.2 = 1.152 → <b>15.2% increase</b></div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">+50%, −50%, +50%, −50%. Final = original ka kitna %?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 1.5×0.5×1.5×0.5 = 0.5625 → original ka <b>56.25%</b> bacha</div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">Salary har saal 10% badhti hai. 3 saal baad Rs. 13,310 hai. Abhi kitni thi?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 13310 / 1.1³ = 13310 / 1.331 = <b>Rs. 10,000</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ MINI TEST 1 ══════════════════ -->
+<div id="mini1" class="section hidden">
+<div class="mini-test">
+  <div class="mt-title">🧪 Mini Test 1 — Types 1, 2, 3</div>
+  <div class="mt-sub">5 questions • Mixed difficulty • Target: 8 minutes</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">Price 40% badhi phir 40% giri. Net change?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ a=+40, b=−40. Net = 40−40+(40×−40)/100 = 0−16 = <b>−16%</b> decrease!</div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">Rs. 2000 pe 30% increase, phir 23.07% decrease. Final?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 1.3 × (1 − 30/130) = 1.3 × 100/130 = 1.3 × 0.769 ≈ 1.0. Final ≈ <b>Rs. 2000</b> (same!)</div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">3/8 of 640 ka 25% = ?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 3/8 of 640 = 240. 25% of 240 = <b>60</b></div></div>
+  <div class="pq"><div class="pnum">Q4</div><div class="ptext">Population 3 saal mein 10% annual growth. Initial 50,000. Final?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 50000 × 1.1³ = 50000 × 1.331 = <b>66,550</b></div></div>
+  <div class="pq"><div class="pnum">Q5</div><div class="ptext">Successive changes a% aur b%. Net = 0 ho, toh +25% ke saath b = ?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 25 + b + 25b/100 = 0 → 25 = −b(1+1/4) = −5b/4 → b = −20. So <b>−20% (decrease)</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ TYPE 4 ══════════════════ -->
+<div id="t4" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">↔️</div>
+    <div><div class="card-title">Type 4: AB Type — Comparison Questions</div><div class="card-sub">"A is x% more than B" → "B is ?% less than A"</div></div>
+  </div>
+  <span class="tag t-cgl">CGL Most Repeated</span>
+
+  <div class="slabel sl-blue">💡 MEANING</div>
+  <div class="box-meaning">
+    "A is 20% more than B" → A = 120, B = 100 (B hai base)<br>
+    "B is how much % less than A?" → ab A base hai (120). B = 100 → 20/120 × 100 = <b>16.67%</b> less<br><br>
+    <b>Base change hoti hai</b> — isliye answer same nahi hota!
+  </div>
+
+  <div class="slabel sl-purple">📐 GOLDEN FORMULAS</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">A x% MORE than B →</span><span class="fval">B is x/(100+x)×100 % LESS than A</span></div>
+    <div class="frow"><span class="fkey">A x% LESS than B →</span><span class="fval">B is x/(100−x)×100 % MORE than A</span></div>
+  </div>
+
+  <div class="slabel sl-green">⚡ COMMON PAIRS — RATTA MAAR LO</div>
+  <div class="box-trick">
+    <div class="trick-item"><span class="tbullet">✦</span>20% more ↔ 16.67% less (= 1/6)</div>
+    <div class="trick-item"><span class="tbullet">✦</span>25% more ↔ 20% less (= 1/5)</div>
+    <div class="trick-item"><span class="tbullet">✦</span>33.33% more ↔ 25% less (= 1/4)</div>
+    <div class="trick-item"><span class="tbullet">✦</span>50% more ↔ 33.33% less (= 1/3)</div>
+    <div class="trick-item"><span class="tbullet">✦</span>100% more ↔ 50% less</div>
+    <div class="trick-item"><span class="tbullet">✦</span>10% less ↔ 11.11% more | 20% less ↔ 25% more</div>
+  </div>
+
+  <div class="slabel sl-red">⚠️ COMMON MISTAKE</div>
+  <div class="box-mistake">⚠️ "A is 25% more than B" → sochte hain "B is 25% less than A". GALAT! B is only 20% less. Formula use karo, andaza nahi!</div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: Ram ki salary Shyam se 40% zyada. Shyam ki salary Ram se kitne % kam?</div>
+    <div class="esteps">
+      <span class="snum">Formula:</span> B less than A = 40/(100+40) × 100<br>
+      <span class="snum">Calculate:</span> 40/140 × 100 = 2/7 × 100 = <b>28.57%</b>
+    </div>
+    <div class="ans-box">✅ Shyam is 28.57% (= 2/7) less than Ram</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">A is 50% more than B. B is how much % less than A?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 50/(150) × 100 = <b>33.33%</b></div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">X's income 20% less than Y's. Y is how much % more than X?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 20/(100−20) × 100 = 20/80 × 100 = <b>25%</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">A is 2/5 more than B. B is how much % less than A?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 2/5 more = 40% more. B less than A = 40/140×100 = <b>28.57%</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ TYPE 5 ══════════════════ -->
+<div id="t5" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">👥</div>
+    <div><div class="card-title">Type 5: Population / Growth & Decay</div><div class="card-sub">Annual compounding — population, bacteria, investment</div></div>
+  </div>
+  <span class="tag t-ntpc">NTPC</span><span class="tag t-cgl">CGL</span>
+
+  <div class="slabel sl-purple">📐 FORMULAS</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">After n years =</span><span class="fval">P × (1 + r/100)ⁿ</span></div>
+    <div class="frow"><span class="fkey">n years ago =</span><span class="fval">P ÷ (1 + r/100)ⁿ</span></div>
+    <div class="frow"><span class="fkey">Decay (decrease) =</span><span class="fval">P × (1 − r/100)ⁿ</span></div>
+    <div class="frow"><span class="fkey">Mixed =</span><span class="fval">P × (1+r1/100)(1−r2/100)...</span></div>
+  </div>
+
+  <div class="slabel sl-green">⚡ QUICK VALUES YAAD KARO</div>
+  <div class="box-trick">
+    <div class="trick-item"><span class="tbullet">✦</span>r=10%, n=2: 1.21 → 21% increase</div>
+    <div class="trick-item"><span class="tbullet">✦</span>r=10%, n=3: 1.331 → 33.1% increase</div>
+    <div class="trick-item"><span class="tbullet">✦</span>r=20%, n=2: 1.44 → 44% increase</div>
+    <div class="trick-item"><span class="tbullet">✦</span>r=5%, n=2: 1.1025 → 10.25% increase</div>
+  </div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: Town ki abadi 2 saal pehle 80,000. Har saal 5% growth. Aaj kitni?</div>
+    <div class="esteps">
+      <span class="snum">Formula:</span> P = 80000 × (1.05)²<br>
+      <span class="snum">Calculate:</span> 80000 × 1.1025 = <b>88,200</b>
+    </div>
+    <div class="ans-box">✅ Current Population = 88,200</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">Population 3 saal mein 10% annual growth. Initial 50,000. Final?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 50000 × 1.1³ = 50000 × 1.331 = <b>66,550</b></div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">Aaj population 1,21,000 hai. 10% annual growth hua. 2 saal pehle kitni thi?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 121000 ÷ 1.21 = <b>1,00,000</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">Bacteria 20% rate se har ghante badhte hain. 3 ghante baad 8640. 3 ghante pehle?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 8640 ÷ 1.2³ = 8640 ÷ 1.728 = <b>5000</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ TYPE 6 ══════════════════ -->
+<div id="t6" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">⚖️</div>
+    <div><div class="card-title">Type 6: Weighted Average %</div><div class="card-sub">Different groups ka overall % nikalna</div></div>
+  </div>
+
+  <div class="slabel sl-blue">💡 MEANING</div>
+  <div class="box-meaning">Jab 2 ya zyada groups hain, aur har group ka % alag ho, toh overall % simple average se alag hoti hai. <b>Weight (size) matter karta hai!</b></div>
+
+  <div class="slabel sl-purple">📐 FORMULA</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">Overall % =</span><span class="fval">(n1×p1 + n2×p2) / (n1+n2)</span></div>
+    <div class="frow"><span class="fkey">Where:</span><span class="fval">n = group size, p = percentage</span></div>
+  </div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: Factory A: 200 workers, 60% male. Factory B: 300 workers, 40% male. Overall male%?</div>
+    <div class="esteps">
+      <span class="snum">Males in A:</span> 200 × 0.6 = 120<br>
+      <span class="snum">Males in B:</span> 300 × 0.4 = 120<br>
+      <span class="snum">Total:</span> 240/500 × 100 = <b>48%</b> (simple avg 50% nahi!)
+    </div>
+    <div class="ans-box">✅ Overall Male% = 48%</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">Test 1: 100 marks, 70% score. Test 2: 150 marks, 80% score. Overall %?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Marks: 70+120=190. Total: 250. Overall = 190/250×100 = <b>76%</b></div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">Village A: 500 pop, 30% literate. Village B: 1000 pop, 45% literate. Combined literacy%?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ (500×30 + 1000×45) / 1500 = (15000+45000)/1500 = 60000/1500 = <b>40%</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">Class A: 40 students, 75% passed. Class B: 60 students, 65% passed. Overall pass%?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ (40×75 + 60×65)/100 = (3000+3900)/100 = <b>69%</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ TYPE 7 ══════════════════ -->
+<div id="t7" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">🗳️</div>
+    <div><div class="card-title">Type 7: Election Problems</div><div class="card-sub">Votes, margin, winner% — all election calculations</div></div>
+  </div>
+  <span class="tag t-cgl">CGL</span><span class="tag t-cbt">CBT-2</span>
+
+  <div class="slabel sl-blue">💡 MEANING</div>
+  <div class="box-meaning">2 candidates hote hain. Winner + Loser = 100% valid votes. Margin = Winner − Loser votes. SSC mein mostly total votes ya initial votes nikalne hote hain.</div>
+
+  <div class="slabel sl-purple">📐 FORMULAS</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">Winner + Loser =</span><span class="fval">100% (valid votes mein)</span></div>
+    <div class="frow"><span class="fkey">Margin =</span><span class="fval">(W% − L%) of Total votes</span></div>
+    <div class="frow"><span class="fkey">Total =</span><span class="fval">Margin / (W%−L%) × 100</span></div>
+    <div class="frow"><span class="fkey">Invalid given ho toh:</span><span class="fval">Valid = Total × (1−invalid%/100)</span></div>
+  </div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: Winner 65% votes se jeeta. Margin 3000. Total valid votes?</div>
+    <div class="esteps">
+      <span class="snum">Difference:</span> 65 − 35 = 30%<br>
+      <span class="snum">Formula:</span> 30% of Total = 3000<br>
+      <span class="snum">Total:</span> 3000 × 100/30 = <b>10,000</b>
+    </div>
+    <div class="ans-box">✅ Total Valid Votes = 10,000</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">Winner 55% votes. Margin = 4400. Total valid votes?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Difference = 10%. 10% = 4400 → Total = <b>44,000</b></div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">Total votes = 12000. Invalid = 5%. Winner gets 60% of valid. Winner's votes?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Valid = 12000×0.95 = 11400. Winner = 60% × 11400 = <b>6840</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">A: 9600 votes, B: 8400 votes. B is defeated by what margin%?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Total=18000. Margin=1200. Margin% = 1200/18000×100 = <b>6.67%</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ MINI TEST 2 ══════════════════ -->
+<div id="mini2" class="section hidden">
+<div class="mini-test">
+  <div class="mt-title">🧪 Mini Test 2 — Types 4, 5, 6, 7</div>
+  <div class="mt-sub">5 questions • Target: 8 minutes</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">Ravi ki salary Seema se 25% zyada. Seema ki salary Ravi se ?% kam?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 25/(125)×100 = <b>20%</b> kam</div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">Population 5% annual growth. 3 saal pehle 64,000. Aaj kitni?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 64000 × 1.05³ = 64000 × 1.1576 ≈ <b>74,088</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">Election: 8% vote difference. Margin = 4800. Total?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 8% = 4800 → Total = <b>60,000</b></div></div>
+  <div class="pq"><div class="pnum">Q4</div><div class="ptext">Physics: 200 marks, 65% score. Chemistry: 100 marks, 80% score. Combined%?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ (130+80)/300 × 100 = 210/300 × 100 = <b>70%</b></div></div>
+  <div class="pq"><div class="pnum">Q5</div><div class="ptext">X is 33.33% less than Y. Y is how much % more than X?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 33.33/(100−33.33)×100 = 33.33/66.67×100 = <b>50%</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ TYPE 8 ══════════════════ -->
+<div id="t8" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">💰</div>
+    <div><div class="card-title">Type 8: Price, Consumption & Expenditure</div><div class="card-sub">Price badhe → Consumption kitna ghatao, budget same rakho</div></div>
+  </div>
+  <span class="tag t-cgl">CGL Most Common</span>
+
+  <div class="slabel sl-blue">💡 CONCEPT</div>
+  <div class="box-meaning"><b>Expenditure = Price × Consumption</b><br><br>Price badha → Expenditure same rakhne ke liye → Consumption ghatao.<br>Yahan <b>AB Type wala hi formula</b> use hota hai!</div>
+
+  <div class="slabel sl-purple">📐 FORMULA</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">Price x% UP →</span><span class="fval">Consumption x/(100+x)×100 % DOWN</span></div>
+    <div class="frow"><span class="fkey">Price x% DOWN →</span><span class="fval">Consumption x/(100−x)×100 % UP</span></div>
+  </div>
+
+  <div class="slabel sl-green">⚡ TRICK TABLE — RATTA MAAR LO</div>
+  <div class="box-trick">
+    <div class="trick-item"><span class="tbullet">✦</span>Price +20% → consumption −16.67% (= 1/6)</div>
+    <div class="trick-item"><span class="tbullet">✦</span>Price +25% → consumption −20% (= 1/5)</div>
+    <div class="trick-item"><span class="tbullet">✦</span>Price +33.33% → consumption −25% (= 1/4)</div>
+    <div class="trick-item"><span class="tbullet">✦</span>Price +50% → consumption −33.33% (= 1/3)</div>
+    <div class="trick-item"><span class="tbullet">✦</span>Price −20% → consumption +25% | Price −25% → consumption +33.33%</div>
+  </div>
+
+  <div class="slabel sl-red">⚠️ COMMON MISTAKE</div>
+  <div class="box-mistake">⚠️ "Price 20% badha toh consumption 20% ghatao" — GALAT! 20% up → 20/120 = 16.67% down. Formula use karo!</div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: Petrol price 25% badh gayi. Expenditure same rakhne ke liye consumption ?% ghataye?</div>
+    <div class="esteps">
+      <span class="snum">Formula:</span> 25/(100+25) × 100 = 25/125 × 100 = <b>20%</b>
+    </div>
+    <div class="ans-box">✅ Consumption 20% ghatao</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">Rice price 20% increase. Expenditure same → consumption % decrease?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 20/120 × 100 = <b>16.67%</b> (= 1/6)</div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">Sugar price 12.5% decrease. Same expenditure → consumption % increase?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 12.5/87.5 × 100 = <b>14.28%</b> (= 1/7)</div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">Monthly salary Rs. 6000. Prices 20% badhne se kharch Rs. 5000 se 5500 ho gaya. Savings % change?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Old savings=1000. New savings=500. Decrease = 500/1000×100 = <b>50% decrease</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ TYPE 9 ══════════════════ -->
+<div id="t9" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">📂</div>
+    <div><div class="card-title">Type 9: Income, Expenditure & Saving</div><div class="card-sub">Salary + expenditure change → savings ka % change</div></div>
+  </div>
+
+  <div class="slabel sl-blue">💡 GOLDEN RULE</div>
+  <div class="box-meaning"><b>Saving = Income − Expenditure</b><br><br>Saving par koi direct shortcut nahi — dono alag calculate karo, phir saving nikalo. Numbers assume karo (100 ya given value).</div>
+
+  <div class="slabel sl-purple">📐 STEPS</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">Step 1:</span><span class="fval">Old Saving = Income − Expenditure</span></div>
+    <div class="frow"><span class="fkey">Step 2:</span><span class="fval">New Income = Old × (1+income%/100)</span></div>
+    <div class="frow"><span class="fkey">Step 3:</span><span class="fval">New Exp = Old × (1+exp%/100)</span></div>
+    <div class="frow"><span class="fkey">Step 4:</span><span class="fval">New Saving = New Income − New Exp</span></div>
+    <div class="frow"><span class="fkey">Step 5:</span><span class="fval">(New−Old)/Old × 100 = Saving change%</span></div>
+  </div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: Income Rs. 10000, Exp Rs. 8000. Income 20% badha, Exp 10% badha. Saving % change?</div>
+    <div class="esteps">
+      <span class="snum">Old saving:</span> 10000−8000 = 2000<br>
+      <span class="snum">New Income:</span> 10000×1.2 = 12000<br>
+      <span class="snum">New Exp:</span> 8000×1.1 = 8800<br>
+      <span class="snum">New Saving:</span> 12000−8800 = 3200<br>
+      <span class="snum">Change%:</span> (3200−2000)/2000×100 = <b>60% increase</b>
+    </div>
+    <div class="ans-box">✅ Savings 60% increase hue</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">Income Rs. 5000, spending Rs. 4000. Income 10% badha, spending 15% badha. Savings %change?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Old saving=1000. New I=5500, New E=4600. New S=900. Change = (900-1000)/1000×100 = <b>−10% decrease</b></div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">Income ka 80% kharcha. Income 20% badha, expenditure 25% badha. Savings% change?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Old: I=100, E=80, S=20. New: I=120, E=100, S=20. <b>Savings same (0% change)!</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">Income Rs. 15000, saves 1/3 of income. Income 20% badhi, expenditure 10% badhi. New savings?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Old: E=10000, S=5000. New I=18000, New E=11000. New S = <b>Rs. 7000</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ TYPE 10 ══════════════════ -->
+<div id="t10" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">🎓</div>
+    <div><div class="card-title">Type 10: Student Pass & Fail</div><div class="card-sub">Pass marks, total marks — exam based questions</div></div>
+  </div>
+  <span class="tag t-ntpc">NTPC Frequent</span>
+
+  <div class="slabel sl-blue">💡 CONCEPT</div>
+  <div class="box-meaning">Pass marks = x% of Total marks. Agar student fail hua "by y marks" → usne (Pass − y) marks liye. 2 students diye hain toh 2 equations banate hain.</div>
+
+  <div class="slabel sl-purple">📐 APPROACH</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">Pass marks =</span><span class="fval">Pass% × Total / 100</span></div>
+    <div class="frow"><span class="fkey">Failed by y:</span><span class="fval">Got = Pass − y marks</span></div>
+    <div class="frow"><span class="fkey">2 students:</span><span class="fval">2 equations → 2 unknowns solve karo</span></div>
+  </div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: Pass% = 40%. Ram ne 185 marks liye aur 15 marks se fail hua. Total marks?</div>
+    <div class="esteps">
+      <span class="snum">Pass marks:</span> 185 + 15 = 200<br>
+      <span class="snum">Formula:</span> 40% of Total = 200<br>
+      <span class="snum">Total:</span> 200 × 100/40 = <b>500</b>
+    </div>
+    <div class="ans-box">✅ Total Marks = 500</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">Pass% = 33.33%. A got 120 marks, failed by 30. Total marks?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Pass = 150. 33.33% of T = 150 → T = 150 × 3 = <b>450</b></div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">A got 30% and failed by 10 marks. B got 40% and passed by 15 marks. Pass marks?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 0.3T + 10 = 0.4T − 15 → 0.1T = 25 → T = 250. Pass = 0.4×250−15 = 100−15 = <b>85</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">Pass% = 40%. Ek student ne 300 marks liye aur 60 marks se pass hua. Total marks?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Pass marks = 300 − 60 = 240. 40% of T = 240 → T = <b>600</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ TYPE 11 ══════════════════ -->
+<div id="t11" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">🤝</div>
+    <div><div class="card-title">Type 11: Commission Based Problems</div><div class="card-sub">Agent, salesman ka commission calculate karna</div></div>
+  </div>
+
+  <div class="slabel sl-purple">📐 FORMULA</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">Commission =</span><span class="fval">Sales × Commission% / 100</span></div>
+    <div class="frow"><span class="fkey">Total Earning =</span><span class="fval">Fixed Salary + Commission</span></div>
+    <div class="frow"><span class="fkey">Total Sales =</span><span class="fval">Commission / Commission% × 100</span></div>
+  </div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: Agent: Rs. 2000 fixed + 5% commission. Mahine mein Rs. 7000 kamaya. Total sales?</div>
+    <div class="esteps">
+      <span class="snum">Commission:</span> 7000 − 2000 = 5000<br>
+      <span class="snum">Sales:</span> 5000 × 100/5 = <b>Rs. 1,00,000</b>
+    </div>
+    <div class="ans-box">✅ Total Sales = Rs. 1,00,000</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">10% commission. Agent Rs. 5500 kamata hai. Total sales?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 5500 × 100/10 = <b>Rs. 55,000</b></div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">Agent: 5% on first Rs. 10000 + 8% on remaining. Sale = Rs. 20000. Total earnings?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ First 10000: 500. Next 10000: 800. Total = <b>Rs. 1300</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">2 agents: A = Rs. 2000 + 5%. B = Rs. 1500 + 8%. Sale Rs. 50000 each. Who earns more?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ A: 2000+2500=4500. B: 1500+4000=5500. <b>B earns more!</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ TYPE 12 ══════════════════ -->
+<div id="t12" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">🔵</div>
+    <div><div class="card-title">Type 12: Venn Diagram Based %</div><div class="card-sub">2 ya 3 sets mein overlap — ni(A∪B) formula</div></div>
+  </div>
+  <span class="tag t-cgl">CGL Mains</span>
+
+  <div class="slabel sl-purple">📐 FORMULAS</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">A union B =</span><span class="fval">n(A) + n(B) − n(A∩B)</span></div>
+    <div class="frow"><span class="fkey">Only A =</span><span class="fval">n(A) − n(A∩B)</span></div>
+    <div class="frow"><span class="fkey">Only B =</span><span class="fval">n(B) − n(A∩B)</span></div>
+    <div class="frow"><span class="fkey">Neither =</span><span class="fval">Total − n(A∪B)</span></div>
+    <div class="frow"><span class="fkey">3 sets =</span><span class="fval">A+B+C − AB − BC − CA + ABC</span></div>
+  </div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: 100 students mein 60% Maths, 50% Science, 30% dono. Only Maths & Neither?</div>
+    <div class="esteps">
+      <span class="snum">Only Maths:</span> 60 − 30 = 30%<br>
+      <span class="snum">Only Science:</span> 50 − 30 = 20%<br>
+      <span class="snum">Neither:</span> 100 − (30+20+30) = 20%
+    </div>
+    <div class="ans-box">✅ Only Maths = 30%, Neither = 20%</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">1000 students: Hindi 60%, English 50%, dono 25%. Neither?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ A∪B = 60+50−25 = 85%. Neither = 15% = <b>150 students</b></div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">200 log: Tea 120, Coffee 80, dono 40. Neither?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ A∪B = 120+80−40 = 160. Neither = 200−160 = <b>40 log</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">100 students: Cricket 70%, Football 60%, dono 40%. Neither?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ A∪B = 70+60−40 = 90%. Neither = <b>10%</b> = 10 students</div></div>
+</div>
+</div>
+
+<!-- ══════════════════ TYPE 13 ══════════════════ -->
+<div id="t13" class="section hidden">
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-icon">🔢</div>
+    <div><div class="card-title">Type 13: Error Correction in Division</div><div class="card-sub">Wrong divisor se sahi answer nikalna</div></div>
+  </div>
+
+  <div class="slabel sl-blue">💡 CONCEPT</div>
+  <div class="box-meaning">Student ne galat number se divide kiya. Pehle actual number nikalo (wrong ans × wrong divisor), phir sahi divisor se divide karo.</div>
+
+  <div class="slabel sl-purple">📐 FORMULA</div>
+  <div class="box-formula">
+    <div class="frow"><span class="fkey">Actual Number =</span><span class="fval">Wrong Answer × Wrong Divisor</span></div>
+    <div class="frow"><span class="fkey">Correct Answer =</span><span class="fval">Actual Number ÷ Correct Divisor</span></div>
+    <div class="frow"><span class="fkey">Shortcut =</span><span class="fval">Wrong Ans × Wrong Div / Right Div</span></div>
+  </div>
+
+  <div class="slabel sl-orange">📝 SOLVED EXAMPLE</div>
+  <div class="box-example">
+    <div class="eq">Q: 24 se divide karna tha. 42 se kiya. Answer 56 aaya. Sahi answer?</div>
+    <div class="esteps">
+      <span class="snum">Actual:</span> 56 × 42 = 2352<br>
+      <span class="snum">Correct:</span> 2352 ÷ 24 = <b>98</b>
+    </div>
+    <div class="ans-box">✅ Correct Answer = 98</div>
+  </div>
+
+  <div class="slabel sl-sky">🏋️ PRACTICE QUESTIONS</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">36 se divide karna tha, 63 se kiya. Answer 28 aaya. Sahi answer?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Number = 28×63=1764. Correct = 1764÷36 = <b>49</b></div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">Number ko 5 se multiply karna tha, 5 se divide kar diya. Answer 80 aaya. Sahi answer?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Number = 80×5=400. Correct = 400×5 = <b>2000</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">45 se divide karna tha, 54 se kiya. Answer 90 aaya. Sahi answer?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Number = 90×54=4860. Correct = 4860÷45 = <b>108</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ MINI TEST 3 ══════════════════ -->
+<div id="mini3" class="section hidden">
+<div class="mini-test">
+  <div class="mt-title">🧪 Mini Test 3 — Types 8–13</div>
+  <div class="mt-sub">5 questions • Target: 8 minutes</div>
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">Petrol price 10% increase. Expenditure same → consumption %decrease?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 10/110×100 = <b>9.09%</b> (≈1/11)</div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">Income Rs. 20000, saves 25%. Income 10% badha, expenditure 5% badha. New savings?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Old E=15000, S=5000. New I=22000, New E=15750. New S = <b>Rs. 6250</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">Pass marks 40%. A failed by 40 marks scoring 160. Total marks?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Pass = 200. 40% = 200 → Total = <b>500</b></div></div>
+  <div class="pq"><div class="pnum">Q4</div><div class="ptext">200 employees: Cricket 70%, Football 60%, dono 40%. Neither?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ A∪B = 90%. Neither = 10% = <b>20 employees</b></div></div>
+  <div class="pq"><div class="pnum">Q5</div><div class="ptext">8 se divide karna tha, 80 se kiya. Answer 100 aaya. Sahi answer?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Number=100×80=8000. Correct = 8000÷8 = <b>1000</b></div></div>
+</div>
+</div>
+
+<!-- ══════════════════ REVISION ══════════════════ -->
+<div id="revision" class="section hidden">
+<div class="rev-section">
+  <div class="rev-title">📋 Full Revision Sheet</div>
+
+  <div class="slabel sl-purple">📐 ALL KEY FORMULAS</div>
+  <table class="ftable">
+    <tr><th>Type</th><th>Formula</th></tr>
+    <tr><td style="color:#f59e0b">Basics</td><td style="color:#a7f3d0">% = (Part÷Whole)×100 | A%ofB = B%ofA</td></tr>
+    <tr><td style="color:#f59e0b">Type 1: Successive</td><td style="color:#a7f3d0">Net% = a + b + ab/100</td></tr>
+    <tr><td style="color:#f59e0b">Type 2: Multiplier</td><td style="color:#a7f3d0">Final = Initial × (1±r/100)^n</td></tr>
+    <tr><td style="color:#f59e0b">Type 4: AB (more)</td><td style="color:#a7f3d0">B less than A = x/(100+x)×100</td></tr>
+    <tr><td style="color:#f59e0b">Type 4: AB (less)</td><td style="color:#a7f3d0">B more than A = x/(100−x)×100</td></tr>
+    <tr><td style="color:#f59e0b">Type 5: Population</td><td style="color:#a7f3d0">P×(1+r/100)^n or P×(1−r/100)^n</td></tr>
+    <tr><td style="color:#f59e0b">Type 7: Election</td><td style="color:#a7f3d0">Margin = (W%−L%) of Total</td></tr>
+    <tr><td style="color:#f59e0b">Type 8: Price↑</td><td style="color:#a7f3d0">Consumption ↓ by x/(100+x)×100</td></tr>
+    <tr><td style="color:#f59e0b">Type 10: Pass-Fail</td><td style="color:#a7f3d0">Pass Marks = Pass% × Total/100</td></tr>
+    <tr><td style="color:#f59e0b">Type 12: Venn</td><td style="color:#a7f3d0">n(A∪B) = n(A)+n(B)−n(A∩B)</td></tr>
+    <tr><td style="color:#f59e0b">Type 13: Error</td><td style="color:#a7f3d0">Correct = Wrong Ans × Wrong Div / Right Div</td></tr>
+  </table>
+
+  <div class="divider"></div>
+
+  <div class="slabel sl-green">⚡ FRACTION TABLE — COMPLETE</div>
+  <div class="grid2">
+    <div class="frac-mini">
+      <div style="color:#f59e0b;font-weight:700;margin-bottom:6px;font-size:0.78rem">HALVES & THIRDS</div>
+      <div>1/2 = 50%</div><div>1/3 = 33.33%</div><div>2/3 = 66.67%</div>
+      <div>1/4 = 25%</div><div>3/4 = 75%</div>
+    </div>
+    <div class="frac-mini">
+      <div style="color:#f59e0b;font-weight:700;margin-bottom:6px;font-size:0.78rem">FIFTHS & SIXTHS</div>
+      <div>1/5 = 20%</div><div>2/5 = 40%</div><div>3/5 = 60%</div>
+      <div>4/5 = 80%</div><div>1/6 = 16.67%</div>
+    </div>
+    <div class="frac-mini">
+      <div style="color:#f59e0b;font-weight:700;margin-bottom:6px;font-size:0.78rem">EIGHTHS</div>
+      <div>1/8 = 12.5%</div><div>3/8 = 37.5%</div><div>5/8 = 62.5%</div><div>7/8 = 87.5%</div>
+    </div>
+    <div class="frac-mini">
+      <div style="color:#f59e0b;font-weight:700;margin-bottom:6px;font-size:0.78rem">OTHERS</div>
+      <div>1/7 = 14.28%</div><div>1/9 = 11.11%</div><div>1/10 = 10%</div><div>1/11 = 9.09%</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="slabel sl-green">⚡ AB TYPE PAIRS — RATTA MAAR LO</div>
+  <div class="box-trick">
+    <div class="trick-item"><span class="tbullet">✦</span>+20% ↔ −16.67% | +25% ↔ −20% | +33.33% ↔ −25% | +50% ↔ −33.33%</div>
+    <div class="trick-item"><span class="tbullet">✦</span>−10% ↔ +11.11% | −20% ↔ +25% | −25% ↔ +33.33% | −33.33% ↔ +50%</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="slabel sl-orange">📝 MOST REPEATED SSC PATTERNS</div>
+  <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px">
+    <div style="background:#0d1929;border-radius:8px;padding:9px 12px;font-size:0.83rem;color:#bfdbfe;display:flex;gap:8px"><span style="color:#f59e0b;font-weight:700">1.</span>Successive % change — 2 changes ka net (CGL mains mein har saal)</div>
+    <div style="background:#0d1929;border-radius:8px;padding:9px 12px;font-size:0.83rem;color:#bfdbfe;display:flex;gap:8px"><span style="color:#f59e0b;font-weight:700">2.</span>AB type — A is x% more, B is ?% less (base change trick)</div>
+    <div style="background:#0d1929;border-radius:8px;padding:9px 12px;font-size:0.83rem;color:#bfdbfe;display:flex;gap:8px"><span style="color:#f59e0b;font-weight:700">3.</span>Population formula — annual growth, n=2 ya 3 saal</div>
+    <div style="background:#0d1929;border-radius:8px;padding:9px 12px;font-size:0.83rem;color:#bfdbfe;display:flex;gap:8px"><span style="color:#f59e0b;font-weight:700">4.</span>Election — margin + winner%, total nikalna</div>
+    <div style="background:#0d1929;border-radius:8px;padding:9px 12px;font-size:0.83rem;color:#bfdbfe;display:flex;gap:8px"><span style="color:#f59e0b;font-weight:700">5.</span>Price-Consumption — expenditure same, consumption change</div>
+    <div style="background:#0d1929;border-radius:8px;padding:9px 12px;font-size:0.83rem;color:#bfdbfe;display:flex;gap:8px"><span style="color:#f59e0b;font-weight:700">6.</span>Pass-Fail — 2 students diye, total ya pass marks nikalna</div>
+    <div style="background:#0d1929;border-radius:8px;padding:9px 12px;font-size:0.83rem;color:#bfdbfe;display:flex;gap:8px"><span style="color:#f59e0b;font-weight:700">7.</span>Venn — 2 subjects, dono ya neither wale</div>
+    <div style="background:#0d1929;border-radius:8px;padding:9px 12px;font-size:0.83rem;color:#bfdbfe;display:flex;gap:8px"><span style="color:#f59e0b;font-weight:700">8.</span>Fraction shortcuts — 3/8, 5/8 type direct calculations</div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════ SPEED TEST ══════════════════ -->
+<div id="speedtest" class="section hidden">
+<div class="speed-test">
+  <div class="st-title">⏱️ Final Speed Test — 20 Questions</div>
+
+  <div class="timer-box">
+    <div><div class="timer-label">Time Limit</div><div class="timer-val" id="timer-display">20:00</div></div>
+    <div>
+      <div style="font-size:0.72rem;color:#64748b;margin-bottom:6px">Target: 1 min/question</div>
+      <button class="start-btn" id="start-btn" onclick="startTimer()">▶ Start Timer</button>
+    </div>
+  </div>
+
+  <div class="pq"><div class="pnum">Q1</div><div class="ptext">x% of 350 = 70. x = ?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ x = 70×100/350 = <b>20</b></div></div>
+  <div class="pq"><div class="pnum">Q2</div><div class="ptext">5/8 of 480 = ?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 5×480/8 = <b>300</b></div></div>
+  <div class="pq"><div class="pnum">Q3</div><div class="ptext">Price 20% up then 20% down. Net %?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ −(20²/100) = <b>−4%</b> net decrease</div></div>
+  <div class="pq"><div class="pnum">Q4</div><div class="ptext">A is 25% more than B. B is ?% less than A?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 25/125×100 = <b>20%</b></div></div>
+  <div class="pq"><div class="pnum">Q5</div><div class="ptext">Population 10% annual growth, initial 10000. After 2 years?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 10000 × 1.1² = 10000 × 1.21 = <b>12,100</b></div></div>
+  <div class="pq"><div class="pnum">Q6</div><div class="ptext">Election: Winner 60%, margin 2000. Total valid votes?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 20% of Total = 2000 → Total = <b>10,000</b></div></div>
+  <div class="pq"><div class="pnum">Q7</div><div class="ptext">Sugar price 25% increase. Expenditure same → consumption ?% decrease?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 25/125×100 = <b>20%</b></div></div>
+  <div class="pq"><div class="pnum">Q8</div><div class="ptext">Pass% = 33.33%. A failed by 15 marks scoring 45. Total marks?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Pass=60. 1/3 of T=60 → T = <b>180</b></div></div>
+  <div class="pq"><div class="pnum">Q9</div><div class="ptext">100 students: 70% Physics, 50% Chemistry, 30% both. Neither?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ A∪B = 70+50−30 = 90%. Neither = <b>10%</b></div></div>
+  <div class="pq"><div class="pnum">Q10</div><div class="ptext">Income Rs. 8000, expenses Rs. 6000. Income 25% badha, expenses 10% badha. Saving %change?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Old S=2000. New I=10000, New E=6600. New S=3400. Change = 1400/2000×100 = <b>70% increase</b></div></div>
+  <div class="pq"><div class="pnum">Q11</div><div class="ptext">3 saal tak 10% annual decrease. Net %?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 0.9³ = 0.729 → <b>27.1% decrease</b></div></div>
+  <div class="pq"><div class="pnum">Q12</div><div class="ptext">A is 1/4 more than B. B is what fraction less than A?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 1/4 more = 25% more. B less than A = 25/125 = 1/5 = <b>20%</b></div></div>
+  <div class="pq"><div class="pnum">Q13</div><div class="ptext">Agent: Rs. 1000 fixed + 4% commission. Earned Rs. 5000. Total sales?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Commission = 4000. Sales = 4000/4×100 = <b>Rs. 1,00,000</b></div></div>
+  <div class="pq"><div class="pnum">Q14</div><div class="ptext">Number ko 45 se divide karna tha, 54 se kiya. Answer 90. Sahi answer?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Number = 90×54=4860. Correct = 4860/45 = <b>108</b></div></div>
+  <div class="pq"><div class="pnum">Q15</div><div class="ptext">Ravi 66.67% more than Seema. Seema ?% less than Ravi?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 66.67 = 2/3 more. B less = (2/3)/(1+2/3) = (2/3)/(5/3) = 2/5 = <b>40%</b></div></div>
+  <div class="pq"><div class="pnum">Q16</div><div class="ptext">37.5% of 560 = ?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 37.5% = 3/8. So 3×560/8 = 3×70 = <b>210</b></div></div>
+  <div class="pq"><div class="pnum">Q17</div><div class="ptext">Class A: 40 students, 75% pass. Class B: 60 students, 65% pass. Overall pass%?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ (40×75+60×65)/100 = (3000+3900)/100 = <b>69%</b></div></div>
+  <div class="pq"><div class="pnum">Q18</div><div class="ptext">Population aaj 1,33,100. 3 saal mein 10% annual growth. 3 saal pehle?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ 133100/1.331 = <b>1,00,000</b></div></div>
+  <div class="pq"><div class="pnum">Q19</div><div class="ptext">A got 40% marks and passed by 20 marks. B got 30% marks and failed by 10. Total marks?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Pass = 0.4T−20 = 0.3T+10. 0.1T=30. T=300. Pass = 120−20 = <b>100 marks</b></div></div>
+  <div class="pq"><div class="pnum">Q20</div><div class="ptext">Successive: +20%, −20%, +20%, −20%. Final value Rs. 9216. Initial?</div><button class="toggle-btn" onclick="tog(this)">Show Answer ▼</button><div class="answer-box">✅ Multiplier = (1.2×0.8)² = (0.96)² = 0.9216. Initial = 9216/0.9216 = <b>Rs. 10,000</b></div></div>
+
+  <div class="score-box">
+    <div class="score-title">📊 Score Yourself</div>
+    <div class="score-row">
+      🔥 18–20 correct → Expert Level — CGL Mains ready!<br>
+      ✅ 15–17 correct → Advanced — NTPC/CBT-2 ready<br>
+      📚 12–14 correct → Intermediate — Types 4, 7, 8, 9 revise karo<br>
+      🔄 Below 12 → Basics + formulas revise karo, phir dobara test do
+    </div>
+  </div>
+</div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function tog(btn) {
+  const ans = btn.nextElementSibling;
+  if (ans.classList.contains('show')) {
+    ans.classList.remove('show');
+    btn.textContent = 'Show Answer ▼';
+  } else {
+    ans.classList.add('show');
+    btn.textContent = 'Hide Answer ▲';
+  }
+}
+
+let timerInterval = null;
+let seconds = 1200;
+
+function startTimer() {
+  if (timerInterval) return;
+  document.getElementById('start-btn').textContent = '⏳ Running...';
+  document.getElementById('start-btn').disabled = true;
+  timerInterval = setInterval(() => {
+    seconds--;
+    const m = String(Math.floor(seconds/60)).padStart(2,'0');
+    const s = String(seconds%60).padStart(2,'0');
+    document.getElementById('timer-display').textContent = m+':'+s;
+    if (seconds <= 0) {
+      clearInterval(timerInterval);
+      document.getElementById('timer-display').textContent = "⏰ TIME'S UP!";
+      document.getElementById('timer-display').style.color = '#f87171';
+    }
+    if (seconds <= 300) {
+      document.getElementById('timer-display').style.color = '#f87171';
+    }
+  }, 1000);
+}
+</script>
+</body>
+</html>
